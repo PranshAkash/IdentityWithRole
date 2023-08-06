@@ -36,10 +36,8 @@ namespace IdentityWithRole.Controllers
 
                 var result = await _userManager.CreateAsync(user, model.Password);
 
-
                 if (result.Succeeded)
                 {
-                    //await _signManager.SignInAsync(user, isPersistent: false);
                     var result2 = await _userManager.AddToRoleAsync(user, "Admin");
                     await _signManager.SignInAsync(user, isPersistent: false).ConfigureAwait(false);
                     return RedirectToAction("index", "Home");
