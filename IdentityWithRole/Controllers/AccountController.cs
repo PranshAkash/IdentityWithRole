@@ -20,6 +20,7 @@ namespace IdentityWithRole.Controllers
         #region Register
         public IActionResult Register()
         {
+
             return View();
         }
         [HttpPost]
